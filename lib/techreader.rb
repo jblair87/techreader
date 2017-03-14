@@ -1,5 +1,4 @@
-require "techreader/version"
+require_relative '../config/environment'
 
 module Techreader
-  # Your code goes here...
 end
