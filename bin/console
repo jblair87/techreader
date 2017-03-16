@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require "bundler/setup"
 require "techreader"
 
@@ -11,4 +10,4 @@ require "techreader"
 # Pry.start
 
 require "irb"
-IRB.start(__FILE__)
+IRB.start

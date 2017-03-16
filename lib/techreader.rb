@@ -1,4 +1,7 @@
-require_relative '../config/environment'
+require 'pry'
+require 'nokogiri'
 
-module Techreader
-end
+
+require_relative 'techreader/version'
+require_relative 'techreader/news'
+require_relative 'techreader/cli'
