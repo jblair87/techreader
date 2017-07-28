@@ -1,0 +1,2 @@
+class TechReader::CLI
+end

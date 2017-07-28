@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'techreader/version'
+require 'tech_reader/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "techreader"
-  spec.version       = Techreader::VERSION
+  spec.name          = "tech_reader"
+  spec.version       = TechReader::VERSION
   spec.authors       = ["Jenna Mandel"]
   spec.email         = ["jenna.b.mandel@gmail.com"]
 
