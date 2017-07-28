@@ -1,4 +1,4 @@
-class Techreader::News
+class TechReader::News
   attr_accessor :title, :author, :url
 
   def self.day

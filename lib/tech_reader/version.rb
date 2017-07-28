@@ -1,3 +1,3 @@
-module Techreader
+module TechReader
   VERSION = "0.1.0"
 end
