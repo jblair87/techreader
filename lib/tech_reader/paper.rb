@@ -1,5 +1,5 @@
 class TechReader::Paper
-  attr_accessor :title, :author, :url
+  attr_accessor :title, :author, :summary, :url
 
   def self.today
     self.scrape_papers
@@ -15,8 +15,9 @@ def self.scrape_papers
 def self.scrape_cnet
    doc = Nokogiri::HTML(open("https://www.cnet.com/apple/"))
    paper = self.new
-   paper.title = doc.search("#topicListing h2.assetBody").text
-   paper.author = doc.search("#topicListing span.assetAuthor").text
+   paper.title = doc.search("#topicListing h2").text
+   paper.author = doc.search("span.assetAuthor").text
+   paper.summary = doc.search("dek p").text
    paper.url = doc.search("a").first.attr("href").strip
    paper
  end
@@ -24,8 +25,9 @@ def self.scrape_cnet
   def self.scrape_recode
     doc = Nokogiri::HTML(open("https://www.recode.net/apple"))
     paper = self.new
-    paper.title = doc.search("h2.c-entry-box__title").text
-    paper.author = doc.search("span.c-byline__item").text
+    paper.title = doc.search(".c-entry-box--compact__title h2").text
+    paper.author = doc.search("span.c-byline__item a").text
+    paper.summary = []
     paper.url = doc.search("a").first.attr("href").strip
     paper
   end

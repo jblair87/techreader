@@ -1,8 +1,7 @@
 # Techreader
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/techreader`. To experiment with that code, run `bin/console` for an interactive prompt.
+You can install this gem via gem install techreader-cli-app. The tech-reader CLI will be installed and you can run ruby bin/tech-reader to get a list of daily Apple related news from select Technology websites in your command line.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -33,4 +32,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/'jennabmandel-36074'/techreader.
-

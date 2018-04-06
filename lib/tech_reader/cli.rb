@@ -1,30 +1,38 @@
 class TechReader::CLI
   def call
-    list_news
-    menu
+    start
   end
-  def list_news
+
+  def list_papers
       puts "Today's Apple News"
-      @news = TechReader::News.today
-      @news.each.with_index(1) do |news, i|
-        puts "#{i}. #{news.title} - #{news.author}"
+        puts ""
+        @papers = TechReader::Paper.today
+        @papers.each.with_index do |paper, i|
+        puts "#{i}. #{paper.title}"
       end
     end
+def print_paper(paper)
+  puts "-------------- #{paper.title} --------------"
+  puts "#{paper.author}"
+  puts "#{paper.summary}"
+end
 
-    def menu
+    def start
+      list_papers
       input = nil
       while input != "exit"
-        puts "type list to see the deals again or type exit:"
-        input = gets.strip.downcase
-
-        if input.to_i > 0
-          the_news = @news[input.to_i-1]
-          puts "#{the_news.title} - #{the_news.author}"
-        elsif input == "list"
-          list_news
-        else
-          puts "Not sure what you want, type list or exit."
+        puts "What news would you like more info on, by number?"
+        puts "Enter list to see the list again."
+        puts "Enter exit to end the program."
+        input = gets.strip
+      if input == "list"
+        list_papers
+      elsif input.to_i > 0
+        if paper = TechReader::Paper.find_by(input.to_i)
+          print_paper(paper)
         end
       end
     end
-end
+        puts "Goodbye"
+      end
+    end
